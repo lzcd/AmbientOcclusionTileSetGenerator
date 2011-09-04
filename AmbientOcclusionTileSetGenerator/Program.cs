@@ -43,7 +43,7 @@ namespace AmbientOcclusionTileSetGenerator
                 nameBuilder.Append(".png");
                 
                 var shadowPointSize = 2f;
-                var shadowColor = Color.Black;
+                var shadowColor = Color.FromArgb(Color.Gray.A, Color.Gray.R /4, Color.Gray.G /4, Color.Gray.B/4);
 
                 using (var bitmap = new Bitmap(16, 16))
                 {
