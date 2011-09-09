@@ -43,7 +43,7 @@ namespace AmbientOcclusionTileSetGenerator
                 nameBuilder.Append(".png");
                 
                 var shadowPointSize = 2f;
-                var shadowColor = Color.FromArgb(Color.Gray.A, Color.Gray.R /4, Color.Gray.G /4, Color.Gray.B/4);
+                var shadowColor = Color.FromArgb(Color.Gray.A, Color.Gray.R /2, Color.Gray.G /2, Color.Gray.B/2);
 
                 using (var bitmap = new Bitmap(16, 16))
                 {
@@ -56,7 +56,7 @@ namespace AmbientOcclusionTileSetGenerator
                                 var xDelta = x - shadowPoint.X;
                                 var yDelta = y - shadowPoint.Y;
                                 var distance = Math.Sqrt((xDelta * xDelta) + (yDelta * yDelta));
-                                var pointInfluence = shadowPointSize / (float)distance;
+                                var pointInfluence = (float)(shadowPointSize / (float)distance);
                                 if (pointInfluence > 1f) pointInfluence = 1f;
                                 if (pointInfluence < 0f) pointInfluence = 0f;
                                 shadowInfluence += pointInfluence;
